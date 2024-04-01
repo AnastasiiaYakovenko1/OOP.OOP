@@ -1,29 +1,33 @@
-#include <string.h>
-#include <iostream>
 #include "Shop.h"
 
-using namespace std;
+int Shop::orderCount = 0;
 
-Shop::Shop() {
-
+Shop::Shop()
+{
+    url = "www.shopExample";
+    url += to_string(orderCount);
+    url += ".com";
 }
 
-Shop::Shop(std::string u) : url(u) {}
+Shop::Shop(string url)
+    : url(url) {}
 
-Shop::~Shop() {
-    cout << "Destructor for shop";
+Shop::~Shop()
+{
+    cout << "\nDestructor for shop";
 }
 
-void Shop::setUrl(std::string newUrl) {
-    url = newUrl;
+void Shop::setUrl(string url)
+{
+    this->url = url;
 }
 
-void Shop::printUrl() {
+void Shop::printUrl() const
+{
     cout << url;
 }
 
-void Shop::addOrderCount() {
+void Shop::addOrderCount()
+{
     orderCount++;
 }
-
-int Shop::orderCount = 0;

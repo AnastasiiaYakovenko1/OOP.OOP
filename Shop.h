@@ -1,20 +1,18 @@
-#include <string.h>
 #include <iostream>
+using namespace std;
 
 class Shop {
 private:
-    std::string url;
+    string url;
 public:
     static int orderCount;
 
     Shop();
-
-    Shop(std::string name);
-
+    Shop(string name);
     ~Shop();
 
-    void setUrl(std::string name);
+    void setUrl(string url);
 
-    void printUrl();
+    void printUrl() const;
     void addOrderCount();
 };
