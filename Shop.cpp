@@ -4,8 +4,12 @@
 
 using namespace std;
 
-Shop::Shop() {
 
+int Shop::orderCount = 0;
+Shop::Shop() {
+    url = "www.shop";
+    url += to_string(orderCount);
+    url += ".com";
 }
 
 Shop::Shop(std::string u) : url(u) {}
@@ -25,5 +29,3 @@ void Shop::printUrl() {
 void Shop::addOrderCount() {
     orderCount++;
 }
-
-int Shop::orderCount = 0;
