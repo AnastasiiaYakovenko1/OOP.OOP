@@ -8,4 +8,6 @@ add_executable(oop_2 main.cpp
         Shop.h
         Customer.cpp
         Product.cpp
-        Shop.cpp)
+        Shop.cpp
+        operator.cpp
+        operator.h)

@@ -1,23 +1,24 @@
-#include <string.h>
 #include <iostream>
+using namespace std;
 
-class Customer {
+class Customer
+{
 private:
-    std::string name;
-public:
+    string name, surname;
     int orderCount;
 
-    Customer();
+    static int customers;
+public:
+    Customer(){ customers++; };
+    Customer(string name, string surname, int orderCount);
 
-    Customer(std::string name);
+    Customer(const Customer &other);
 
-    Customer(std::string name, int orderCount);
+    Customer(Customer &&other);
 
-    ~Customer();
+    ~Customer(){ customers--; };
 
-    void setName(std::string name);
-
-    void printName();
-
-    void addOrderCount();
+    static void customersFoo();
+    friend ostream &operator << (ostream &os, Customer &obj);
+    friend istream &operator >> (istream &is, Customer &obj);
 };

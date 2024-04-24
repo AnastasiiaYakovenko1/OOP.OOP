@@ -1,25 +1,28 @@
 #include "Product.h"
 
-void Product::printName() {
+void Product::printName()
+{
     std::cout << name;
 }
 
-double Product::getPrice() {
+double Product::getPrice()
+{
     return price;
 }
 
-Product::Product() {
+Product::Product()
+{
     name = "new product";
     price = 5;
 }
 
-Product::Product(std::string n, double p) {
-    name = n;
-    price = p;
+Product::Product(string name, double price)
+{
+    this->name = name;
+    this->price = price;
 }
 
-Product::~Product() {}
-
-void Product::setName(std::string newName) {
+void Product::setName(string newName)
+{
     name = newName;
 }

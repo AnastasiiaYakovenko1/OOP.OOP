@@ -1,5 +1,5 @@
-#include <string.h>
 #include <iostream>
+using namespace std;
 
 class Product {
 private:
@@ -8,12 +8,10 @@ public:
     double price;
 
     Product();
+    Product(string name, double price);
+    ~Product(){};
 
-    Product(std::string n, double p);
-
-    ~Product();
-
-    void setName(std::string newName);
+    void setName(string newName);
 
     void printName();
 
